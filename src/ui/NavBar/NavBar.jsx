@@ -1,0 +1,87 @@
+function Navbar() {
+  return (
+    <>
+      <nav className="border-gray-200 bg-white dark:bg-gray-900">
+        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+          <a
+            href="https://minly.com/"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODUiIGhlaWdodD0iNDQiIHZpZXdCb3g9IjAgMCA4NSA0NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiPgogICAgICAgIDxtYXNrIGlkPSJtYXNrMCIgbWFzay10eXBlPSJhbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMTAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIyNCI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNC4xNDY5IDEzLjI5MzRDMTIuNjc4OCAxMS43MzEyIDEwLjU4MjMgMTAuNzUxMSA4LjI1NzA4IDEwLjc1MTFDMy44MjgxNSAxMC43NTExIDAuMjI1NTg2IDE0LjMwMzEgMC4yMjU1ODYgMTguNjY5OFYzMS4wMjM1QzAuMjI1NTg2IDMyLjE4OTcgMS4xODQ1IDMzLjEzNTIgMi4zNjczIDMzLjEzNTJDMy41NTAwOSAzMy4xMzUyIDQuNTA5MDEgMzIuMTg5NyA0LjUwOTAxIDMxLjAyMzVWMTguNjY5OEM0LjUwOTAxIDE2LjYzMjEgNi4xOTAyOCAxNC45NzQ0IDguMjU3MDggMTQuOTc0NEMxMC4zMjM2IDE0Ljk3NDQgMTIuMDA1MSAxNi42MzIxIDEyLjAwNTEgMTguNjY5OFYzMS4wMjM1QzEyLjAwNTEgMzIuMTg5NyAxMi45NjQxIDMzLjEzNTIgMTQuMTQ2OSAzMy4xMzUyQzE1LjMyOTcgMzMuMTM1MiAxNi4yODg2IDMyLjE4OTcgMTYuMjg4NiAzMS4wMjM1VjE4LjY2OThDMTYuMjg4NiAxNi42MzIxIDE3Ljk3MDEgMTQuOTc0NCAyMC4wMzY5IDE0Ljk3NDRDMjIuMTAzNCAxNC45NzQ0IDIzLjc4NSAxNi42MzIxIDIzLjc4NSAxOC42Njk4VjI1LjI1ODhDMjMuNzg1IDI5LjYyNSAyNy4zODc4IDMzLjE3NzUgMzEuODE2NSAzMy4xNzc1QzM2LjI0NTQgMzMuMTc3NSAzOS44NDgzIDI5LjYyNSAzOS44NDgzIDI1LjI1ODhWMjQuMjI4NEMzOS44NDgzIDIzLjA2MTkgMzguODg5NCAyMi4xMTYyIDM3LjcwNjYgMjIuMTE2MkMzNi41MjM4IDIyLjExNjIgMzUuNTY0OCAyMy4wNjE5IDM1LjU2NDggMjQuMjI4NFYyNS4yNTg4QzM1LjU2NDggMjcuMjk2MyAzMy44ODMzIDI4Ljk1MzkgMzEuODE2NSAyOC45NTM5QzI5Ljc1IDI4Ljk1MzkgMjguMDY4NyAyNy4yOTYzIDI4LjA2ODcgMjUuMjU4OFYxOC42Njk4QzI4LjA2ODcgMTQuMzAzMSAyNC40NjU2IDEwLjc1MTEgMjAuMDM2OSAxMC43NTExQzE3LjcxMTcgMTAuNzUxMSAxNS42MTQ5IDExLjczMTIgMTQuMTQ2OSAxMy4yOTM0WiIKICAgICAgICAgICAgICAgICAgZmlsbD0id2hpdGUiLz4KICAgICAgICA8L21hc2s+CiAgICAgICAgPGcgbWFzaz0idXJsKCNtYXNrMCkiPgogICAgICAgICAgICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIKICAgICAgICAgICAgICAgICAgZD0iTTE0LjE0NjkgMTMuMjkzNEMxMi42Nzg4IDExLjczMTIgMTAuNTgyMyAxMC43NTExIDguMjU3MDggMTAuNzUxMUMzLjgyODE1IDEwLjc1MTEgMC4yMjU1ODYgMTQuMzAzMSAwLjIyNTU4NiAxOC42Njk4VjMxLjAyMzVDMC4yMjU1ODYgMzIuMTg5NyAxLjE4NDUgMzMuMTM1MiAyLjM2NzMgMzMuMTM1MkMzLjU1MDA5IDMzLjEzNTIgNC41MDkwMSAzMi4xODk3IDQuNTA5MDEgMzEuMDIzNVYxOC42Njk4QzQuNTA5MDEgMTYuNjMyMSA2LjE5MDI4IDE0Ljk3NDQgOC4yNTcwOCAxNC45NzQ0QzEwLjMyMzYgMTQuOTc0NCAxMi4wMDUxIDE2LjYzMjEgMTIuMDA1MSAxOC42Njk4VjMxLjAyMzVDMTIuMDA1MSAzMi4xODk3IDEyLjk2NDEgMzMuMTM1MiAxNC4xNDY5IDMzLjEzNTJDMTUuMzI5NyAzMy4xMzUyIDE2LjI4ODYgMzIuMTg5NyAxNi4yODg2IDMxLjAyMzVWMTguNjY5OEMxNi4yODg2IDE2LjYzMjEgMTcuOTcwMSAxNC45NzQ0IDIwLjAzNjkgMTQuOTc0NEMyMi4xMDM0IDE0Ljk3NDQgMjMuNzg1IDE2LjYzMjEgMjMuNzg1IDE4LjY2OThWMjUuMjU4OEMyMy43ODUgMjkuNjI1IDI3LjM4NzggMzMuMTc3NSAzMS44MTY1IDMzLjE3NzVDMzYuMjQ1NCAzMy4xNzc1IDM5Ljg0ODMgMjkuNjI1IDM5Ljg0ODMgMjUuMjU4OFYyNC4yMjg0QzM5Ljg0ODMgMjMuMDYxOSAzOC44ODk0IDIyLjExNjIgMzcuNzA2NiAyMi4xMTYyQzM2LjUyMzggMjIuMTE2MiAzNS41NjQ4IDIzLjA2MTkgMzUuNTY0OCAyNC4yMjg0VjI1LjI1ODhDMzUuNTY0OCAyNy4yOTYzIDMzLjg4MzMgMjguOTUzOSAzMS44MTY1IDI4Ljk1MzlDMjkuNzUgMjguOTUzOSAyOC4wNjg3IDI3LjI5NjMgMjguMDY4NyAyNS4yNTg4VjE4LjY2OThDMjguMDY4NyAxNC4zMDMxIDI0LjQ2NTYgMTAuNzUxMSAyMC4wMzY5IDEwLjc1MTFDMTcuNzExNyAxMC43NTExIDE1LjYxNDkgMTEuNzMxMiAxNC4xNDY5IDEzLjI5MzRaIgogICAgICAgICAgICAgICAgICBmaWxsPSJ3aGl0ZSIvPgogICAgICAgIDwvZz4KICAgICAgICA8bWFzayBpZD0ibWFzazEiIG1hc2stdHlwZT0iYWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjM1IiB5PSIxNiIgd2lkdGg9IjUiIGhlaWdodD0iNSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS40OTQ2IDE4Ljc5NTRDMzUuNDk0NiAxOS45OTk3IDM2LjQ4NDkgMjAuOTc2MSAzNy43MDY2IDIwLjk3NjFDMzguOTI4MyAyMC45NzYxIDM5LjkxODcgMTkuOTk5NyAzOS45MTg3IDE4Ljc5NTRDMzkuOTE4NyAxNy41OTA2IDM4LjkyODMgMTYuNjE0MSAzNy43MDY2IDE2LjYxNDFDMzYuNDg0OSAxNi42MTQxIDM1LjQ5NDYgMTcuNTkwNiAzNS40OTQ2IDE4Ljc5NTRaIgogICAgICAgICAgICAgICAgICBmaWxsPSJ3aGl0ZSIvPgogICAgICAgIDwvbWFzaz4KICAgICAgICA8ZyBtYXNrPSJ1cmwoI21hc2sxKSI+CiAgICAgICAgICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIgogICAgICAgICAgICAgICAgICBkPSJNMzUuNDk0NiAxOC43OTU0QzM1LjQ5NDYgMTkuOTk5NyAzNi40ODQ5IDIwLjk3NjEgMzcuNzA2NiAyMC45NzYxQzM4LjkyODMgMjAuOTc2MSAzOS45MTg3IDE5Ljk5OTcgMzkuOTE4NyAxOC43OTU0QzM5LjkxODcgMTcuNTkwNiAzOC45MjgzIDE2LjYxNDEgMzcuNzA2NiAxNi42MTQxQzM2LjQ4NDkgMTYuNjE0MSAzNS40OTQ2IDE3LjU5MDYgMzUuNDk0NiAxOC43OTU0WiIKICAgICAgICAgICAgICAgICAgZmlsbD0id2hpdGUiLz4KICAgICAgICA8L2c+CiAgICAgICAgPG1hc2sgaWQ9Im1hc2syIiBtYXNrLXR5cGU9ImFscGhhIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSIzOCIgeT0iMCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjM0Ij4KICAgICAgICAgICAgPHBhdGggZD0iTTU5LjEyNDQgMi4yNTk2VjEyLjU5MDZDNTkuMTE1NCAxMi42Njg3IDU5LjExMDUgMjUuMTgxMiA1OS4xMTA1IDI1LjE4MTJDNTkuMTEwNSAyNS44MTE2IDU4Ljk0OTIgMjYuNDA1NiA1OC42NjU2IDI2LjkyNThDNTguMDI4OSAyOC4wNzMyIDU2Ljc5MzYgMjguODUzMSA1NS4zNzYgMjguODUzMUM1My4zMDk1IDI4Ljg1MzEgNTEuNjI4MiAyNy4xOTUxIDUxLjYyODIgMjUuMTU3NlYxOC42OTU0QzUxLjYyODIgMTQuMzI4OSA0OC4wMjUxIDEwLjc3NjkgNDMuNTk2NCAxMC43NzY5QzQyLjA4MDggMTAuNzc2OSA0MC42MDQ3IDExLjE5NTQgMzkuMzI2MiAxMS45ODc0QzM4LjMyNSAxMi42MDgyIDM4LjAyMzYgMTMuOTExNiAzOC42NTI5IDE0Ljg5OTRDMzkuMjgyNSAxNS44ODY2IDQwLjYwNDQgMTYuMTg0NiA0MS42MDYzIDE1LjU2MzNDNDIuMjAwNCAxNS4xOTUxIDQyLjg4ODggMTUuMDAwMiA0My41OTY0IDE1LjAwMDJDNDUuNjYzMiAxNS4wMDAyIDQ3LjM0NDUgMTYuNjU3OSA0Ny4zNDQ1IDE4LjY5NTRWMjUuMTU3NkM0Ny4zNDQ1IDI5LjUyMzggNTAuOTQ3MyAzMy4wNzY2IDU1LjM3NiAzMy4wNzY2QzU3Ljc0NDggMzMuMDc2NiA1OS44NzY0IDMyLjA1OTkgNjEuMzQ3NiAzMC40NDY1TDYxLjM1NDggMzAuNDI4NkM2Mi42MTQgMjkuMDQ3MSA2My4zODM2IDI3LjIyNTUgNjMuMzkzNyAyNS4yMjA3TDYzLjQwNzIgMjUuMTg2QzYzLjQwNzIgMjUuMTc2NiA2My40MDc4IDI1LjE2NzMgNjMuNDA3OCAyNS4xNTc2VjIuMjU5NkM2My40MDc4IDEuMDkzNCA2Mi40NDg5IDAuMTQ3OTQ5IDYxLjI2NjEgMC4xNDc5NDlDNjAuMDgzMyAwLjE0Nzk0OSA1OS4xMjQ0IDEuMDkzNCA1OS4xMjQ0IDIuMjU5NloiCiAgICAgICAgICAgICAgICAgIGZpbGw9IndoaXRlIi8+CiAgICAgICAgPC9tYXNrPgogICAgICAgIDxnIG1hc2s9InVybCgjbWFzazIpIj4KICAgICAgICAgICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiCiAgICAgICAgICAgICAgICAgIGQ9Ik01OS4xMjQ0IDIuMjU5NlYxMi41OTA2QzU5LjExNTQgMTIuNjY4NyA1OS4xMTA1IDI1LjE4MTIgNTkuMTEwNSAyNS4xODEyQzU5LjExMDUgMjUuODExNiA1OC45NDkyIDI2LjQwNTYgNTguNjY1NiAyNi45MjU4QzU4LjAyODkgMjguMDczMiA1Ni43OTM2IDI4Ljg1MzEgNTUuMzc2IDI4Ljg1MzFDNTMuMzA5NSAyOC44NTMxIDUxLjYyODIgMjcuMTk1MSA1MS42MjgyIDI1LjE1NzZWMTguNjk1NEM1MS42MjgyIDE0LjMyODkgNDguMDI1MSAxMC43NzY5IDQzLjU5NjQgMTAuNzc2OUM0Mi4wODA4IDEwLjc3NjkgNDAuNjA0NyAxMS4xOTU0IDM5LjMyNjIgMTEuOTg3NEMzOC4zMjUgMTIuNjA4MiAzOC4wMjM2IDEzLjkxMTYgMzguNjUyOSAxNC44OTk0QzM5LjI4MjUgMTUuODg2NiA0MC42MDQ0IDE2LjE4NDYgNDEuNjA2MyAxNS41NjMzQzQyLjIwMDQgMTUuMTk1MSA0Mi44ODg4IDE1LjAwMDIgNDMuNTk2NCAxNS4wMDAyQzQ1LjY2MzIgMTUuMDAwMiA0Ny4zNDQ1IDE2LjY1NzkgNDcuMzQ0NSAxOC42OTU0VjI1LjE1NzZDNDcuMzQ0NSAyOS41MjM4IDUwLjk0NzMgMzMuMDc2NiA1NS4zNzYgMzMuMDc2NkM1Ny43NDQ4IDMzLjA3NjYgNTkuODc2NCAzMi4wNTk5IDYxLjM0NzYgMzAuNDQ2NUw2MS4zNTQ4IDMwLjQyODZDNjIuNjE0IDI5LjA0NzEgNjMuMzgzNiAyNy4yMjU1IDYzLjM5MzcgMjUuMjIwN0w2My40MDcyIDI1LjE4NkM2My40MDcyIDI1LjE3NjYgNjMuNDA3OCAyNS4xNjczIDYzLjQwNzggMjUuMTU3NlYyLjI1OTZDNjMuNDA3OCAxLjA5MzQgNjIuNDQ4OSAwLjE0Nzk0OSA2MS4yNjYxIDAuMTQ3OTQ5QzYwLjA4MzMgMC4xNDc5NDkgNTkuMTI0NCAxLjA5MzQgNTkuMTI0NCAyLjI1OTZaIgogICAgICAgICAgICAgICAgICBmaWxsPSJ3aGl0ZSIvPgogICAgICAgIDwvZz4KICAgICAgICA8bWFzayBpZD0ibWFzazMiIG1hc2stdHlwZT0iYWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjY4IiB5PSIxMCIgd2lkdGg9IjE3IiBoZWlnaHQ9IjM0Ij4KICAgICAgICAgICAgPHBhdGggZD0iTTY4LjcxIDEyLjk2NjdWMjUuMDg0OUM2OC43MSAyOS40NjcgNzIuMjg4MyAzMy4wNzE1IDc2LjczMjggMzMuMDc2NkM3OC4wODg4IDMzLjA3NzggNzkuMzY2OSAzMi43NDU0IDgwLjQ4ODYgMzIuMTU5NlY0MS4zNjg3QzgwLjQ4ODYgNDIuNTM0OSA4MS40NDc2IDQzLjQ4MDMgODIuNjMwNCA0My40ODAzQzgzLjgxMzQgNDMuNDgwMyA4NC43NzIxIDQyLjUzNDkgODQuNzcyMSA0MS4zNjg3VjMxLjAzNzJDODQuNzgxMyAzMC45NTk5IDg0Ljc4NjIgMTguNDQ3MSA4NC43ODYyIDE4LjQ0NzFIODQuNzczNVYxMy4wNTI4Qzg0Ljc3MzUgMTEuODk1MSA4My44NDI4IDEwLjkyNjQgODIuNjY4NyAxMC45MDY4QzgxLjQ2ODkgMTAuODg2OSA4MC40OTAxIDExLjg0IDgwLjQ5MDEgMTMuMDE4MUw4MC40NzYzIDI1LjE4MTJDODAuNDc2MyAyNS44MTE2IDgwLjMxNDYgMjYuNDA1NiA4MC4wMzE0IDI2LjkyNThDNzkuMzk4MyAyOC4wNjYxIDc4LjE3MzUgMjguODQ0IDc2Ljc2NjUgMjguODUzMUM3NC42OTE0IDI4Ljg2NjEgNzIuOTkzNyAyNy4xNTY4IDcyLjk5MzcgMjUuMTEwN1YxMi45NjY3QzcyLjk5MzcgMTEuODAwOCA3Mi4wMzQ4IDEwLjg1NTMgNzAuODUxNyAxMC44NTUzQzY5LjY2OTIgMTAuODU1MyA2OC43MSAxMS44MDA4IDY4LjcxIDEyLjk2NjdaIgogICAgICAgICAgICAgICAgICBmaWxsPSJ3aGl0ZSIvPgogICAgICAgIDwvbWFzaz4KICAgICAgICA8ZyBtYXNrPSJ1cmwoI21hc2szKSI+CiAgICAgICAgICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIgogICAgICAgICAgICAgICAgICBkPSJNNjguNzEgMTIuOTY2N1YyNS4wODQ5QzY4LjcxIDI5LjQ2NyA3Mi4yODgzIDMzLjA3MTUgNzYuNzMyOCAzMy4wNzY2Qzc4LjA4ODggMzMuMDc3OCA3OS4zNjY5IDMyLjc0NTQgODAuNDg4NiAzMi4xNTk2VjQxLjM2ODdDODAuNDg4NiA0Mi41MzQ5IDgxLjQ0NzYgNDMuNDgwMyA4Mi42MzA0IDQzLjQ4MDNDODMuODEzNCA0My40ODAzIDg0Ljc3MjEgNDIuNTM0OSA4NC43NzIxIDQxLjM2ODdWMzEuMDM3MkM4NC43ODEzIDMwLjk1OTkgODQuNzg2MiAxOC40NDcxIDg0Ljc4NjIgMTguNDQ3MUg4NC43NzM1VjEzLjA1MjhDODQuNzczNSAxMS44OTUxIDgzLjg0MjggMTAuOTI2NCA4Mi42Njg3IDEwLjkwNjhDODEuNDY4OSAxMC44ODY5IDgwLjQ5MDEgMTEuODQgODAuNDkwMSAxMy4wMTgxTDgwLjQ3NjMgMjUuMTgxMkM4MC40NzYzIDI1LjgxMTYgODAuMzE0NiAyNi40MDU2IDgwLjAzMTQgMjYuOTI1OEM3OS4zOTgzIDI4LjA2NjEgNzguMTczNSAyOC44NDQgNzYuNzY2NSAyOC44NTMxQzc0LjY5MTQgMjguODY2MSA3Mi45OTM3IDI3LjE1NjggNzIuOTkzNyAyNS4xMTA3VjEyLjk2NjdDNzIuOTkzNyAxMS44MDA4IDcyLjAzNDggMTAuODU1MyA3MC44NTE3IDEwLjg1NTNDNjkuNjY5MiAxMC44NTUzIDY4LjcxIDExLjgwMDggNjguNzEgMTIuOTY2N1oiCiAgICAgICAgICAgICAgICAgIGZpbGw9IndoaXRlIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgogICAgPGRlZnM+CiAgICAgICAgPGNsaXBQYXRoIGlkPSJjbGlwMCI+CiAgICAgICAgICAgIDxyZWN0IHdpZHRoPSI4NSIgaGVpZ2h0PSI0My43NSIgZmlsbD0id2hpdGUiLz4KICAgICAgICA8L2NsaXBQYXRoPgogICAgPC9kZWZzPgo8L3N2Zz4K"
+              className="h-8"
+              alt="Flowbite Logo"
+            />
+            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+              
+            </span>
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            className="inline-flex   h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="h-5 w-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900">
+              <li>
+                <a
+                  href="#"
+                  className="block rounded bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 dark:text-white md:dark:text-blue-500"
+                  aria-current="page"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                >
+                  Images
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                >
+                  Videos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                >
+                  Logout
+                </a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+}
+
+export default Navbar;
