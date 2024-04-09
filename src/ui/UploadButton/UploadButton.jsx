@@ -16,7 +16,7 @@ const UploadButton = () => {
         const formData = new FormData();
         formData.append('file', selectedFile);
         formData.append('uploaderUserId', '6611719d19649772047095be');
-        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_backend_URL}/upload_files`, formData, {
+        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_backend_URL}/api/v1/media`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
