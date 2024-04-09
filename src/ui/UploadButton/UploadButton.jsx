@@ -1,19 +1,33 @@
 import   { useState } from 'react';
+import axios from 'axios';
 
 const UploadButton = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
-    
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
+    console.log('Uploading file:', selectedFile);
     if (selectedFile) {
-      // You can implement your upload logic here
-      console.log('Uploading file:', selectedFile);
-      // Reset selected file after upload
-      setSelectedFile(null);
+      try {
+        console.log('Uploading file api :', import.meta.env.VITE_REACT_APP_backend_URL);
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+        formData.append('uploaderUserId', '6611719d19649772047095be');
+        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_backend_URL}/upload_files`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+
+        console.log('Upload successful:', response.data);
+
+        setSelectedFile(null);
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
     } else {
       console.log('Please select a file before uploading.');
     }
