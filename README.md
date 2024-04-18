@@ -1,6 +1,6 @@
 # Description
 
-This post feed react website  is offering a sleek, user-friendly interface for browsing and interacting with dynamic content. 
+This post feed react website which is offering a sleek, user-friendly interface for browsing and interacting with dynamic content. 
 
 ## Cloning and Installation
 
@@ -23,3 +23,14 @@ VITE_REACT_APP_backend_URL = http://localhost:5000
 ```
 
 Assuming you run your backend service at localhost port 5000
+
+
+## Running the App
+
+Once the app is cloned, dependencies are installed, and environment variables are set up, you can run the app:
+
+1. Start the development server: `npm start` or `yarn start`
+2. Open your browser and navigate to the provided URL (usually `http://localhost:3000`) to view the app.
+
+Enjoy using the app!
+
