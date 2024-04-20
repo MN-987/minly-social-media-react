@@ -1,31 +1,52 @@
-import   { useState } from 'react';
+/* eslint-disable react/prop-types */
+import   { useContext, useState } from 'react';
 import axios from 'axios';
+import toast from 'react-hot-toast';
+import { PostContext } from '../../context/posts';
 
-const UploadButton = () => {
+const UploadButton = ({ refreshPosts }) => {
   const [selectedFile, setSelectedFile] = useState(null);
-
+  const [unSupportedFileFlag, setUnSupportedFileFlag] = useState(false);
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
+    
   };
 
+  const updatePost=useContext(PostContext);
+  console.log('updatePost:', updatePost);
   const handleUpload = async () => {
     console.log('Uploading file:', selectedFile);
     if (selectedFile) {
       try {
-        console.log('Uploading file api :', import.meta.env.VITE_REACT_APP_backend_URL);
+
+        const suportedFileTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif' , 'image/gif' , 'video/mp4'];
         const formData = new FormData();
         formData.append('file', selectedFile);
         formData.append('uploaderUserId', '6611719d19649772047095be');
+        console.log('Uploading file api validation test1:');
+        console.log('Uploading file api validation test:', suportedFileTypes.includes(selectedFile.type));
+        
+        if (!suportedFileTypes.includes(selectedFile.type)) {
+          console.log('Unsupported file type.');
+          setUnSupportedFileFlag(true);
+          return; // Stop further execution
+        }
+        
+        
         const response = await axios.post(`${import.meta.env.VITE_REACT_APP_backend_URL}/api/v1/media`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
-
+        toast.success('File uploaded successfully.'  );
+        
+        console.log('Uploading file api :', import.meta.env.VITE_REACT_APP_backend_URL);
         console.log('Upload successful:', response.data);
-
         setSelectedFile(null);
+        setUnSupportedFileFlag(false);
+        refreshPosts();
       } catch (error) {
+         toast.error('This is was a problem in uploading file!')
         console.error('Error uploading file:', error);
       }
     } else {
@@ -74,12 +95,17 @@ const UploadButton = () => {
           </button>
         </div>
       )}
-      <p
-        className="text-xs text-gray-600 dark:text-gray-400"
-        id="file_input_help"
-      >
-        SVG, PNG, JPG or GIF (MAX. 800x400px).
-      </p>
+
+      {unSupportedFileFlag&& (
+        <p className='text-red-500 text-sm'>Unsupported file type. Please select PNG, JPEG, JPG, GIF, or MP4.</p>
+      )}
+     <p
+  className="text-xs text-gray-600 dark:text-gray-400"
+  id="file_input_help"
+>
+  Accepted file types: PNG, JPEG, JPG, GIF, MP4.
+</p>
+
     </div>
   );
 };

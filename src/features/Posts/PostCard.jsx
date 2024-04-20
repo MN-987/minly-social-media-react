@@ -1,69 +1,74 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
+import axios from 'axios';
 import { FiUser } from 'react-icons/fi'; // Assuming you're using react-icons for icons
 
 const PostCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(post.likes.count);
 
-  const handleLikeClick = () => {
-    setLiked(!liked);
+  const handleLikeClick = async () => {
+    try {
+      
+      const url = liked
+        ? `${import.meta.env.VITE_REACT_APP_backend_URL}/api/v1/media/un-like`
+        : `${import.meta.env.VITE_REACT_APP_backend_URL}/api/v1/media/like`;
+      const response = await axios.post(url, {
+        mediaId: post._id,
+        userId: post.uploaderUserId._id,
+      });
+       
+      setLikesCount(response.data.data.likes.count);
+      setLiked(!liked);
+    } catch (error) {
+      console.error('Error liking/unliking post:', error);
+    }
   };
 
-  // Ensure that post.uploaderUserId exists before accessing its properties
-  const firstName = post.uploaderUserId ? post.uploaderUserId.firstName : 'First Name';
-  const lastName = post.uploaderUserId ? post.uploaderUserId.lastName : 'Last Name';
-
   return (
-    <>
-      <div className="flex-auto w-full">
-        <div className="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-          <div className="p-5 flex flex-col items-center justify-center">
-            <a href="#" className="flex items-center mb-2">
-              <div className="h-12 w-12 mr-2 bg-white rounded-full flex items-center justify-center">
-                <FiUser className="h-6 w-6 text-gray-700" /> {/* Profile icon */}
-              </div>
+    <div className="w-full flex-auto">
+      <div className="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div className="flex flex-col items-center justify-center p-5">
+          <a href="#" className="mb-2 flex items-center">
+            <div className="mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-white">
+              <FiUser className="h-6 w-6 text-gray-700" /> {/* Profile icon */}
+            </div>
+
+            {post.uploaderUserId && (
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {firstName} {lastName}
+                {post.uploaderUserId.firstName} {post.uploaderUserId.lastName}
               </h5>
-            </a>
-            <a href="#" className="mb-4">
+            )}
+          </a>
+          <a  className="mb-4">
+            {post.mediaType === 'video' ? (
+              <video controls>
+                <source src={post.mediaUrl} type="video/mp4" />
+              </video>
+            ) : (
               <img
-                className="mx-auto h-auto w-65 rounded-t-lg"
+                className="w-65 mx-auto h-auto rounded-t-lg"
                 src={post.mediaUrl}
                 alt=""
               />
-            </a>
-            <div className="flex items-center justify-center">
-              <button
-                onClick={handleLikeClick}
-                className={`inline-flex items-center rounded-lg ${
-                  liked ? 'bg-blue-700' : 'bg-white-200'
-                } px-3 py-2 text-center text-sm font-medium text-${
-                  liked ? 'white' : 'gray-900'
-                } hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
-              >
-                Like
-                <span className="ml-2" aria-hidden="true">
-                  {/* Like icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill={liked ? 'currentColor' : 'none'}
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={`h-6 w-6 ${liked ? 'text-white' : 'text-gray-900'}`}
-                  >
-                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
-                  </svg>
-                </span>
-              </button>
-              <h6 className="ml-2 text-white">{post.likes.count}</h6>
-            </div>
+            )}
+          </a>
+          <div className="flex items-center justify-center">
+            <button
+              onClick={handleLikeClick}
+              className={`inline-flex items-center rounded-lg ${
+                liked ? 'bg-blue-700' : 'bg-white-200'
+              } px-3 py-2 text-center text-sm font-medium text-${
+                liked ? 'white' : 'gray-900'
+              } hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
+            >
+              {liked ? 'Unlike' : 'Like'}
+            </button>
+            <h6 className="ml-2 text-white">{likesCount}</h6>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
